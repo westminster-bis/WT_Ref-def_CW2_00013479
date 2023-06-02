@@ -1,0 +1,14 @@
+extends layout.pug
+
+block number1
+    if products.length 
+            each product in products
+                h1 #{product.name}
+                br
+                div.mypage_txt
+                    p Product description: #{product.description}
+                    br
+                    p Archived status: #{product.archived}
+                
+    else 
+        h2 You have some troubles here...

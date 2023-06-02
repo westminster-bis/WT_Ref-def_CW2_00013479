@@ -1,0 +1,14 @@
+extends layout.pug
+
+block number1
+    if isarchived 
+        p.success The product has been archived successfully
+    div.product-list
+        if products.length
+            each product in products
+                p.product 
+                    a(href=`/${product.id}`) #{product.description}
+                    span
+                        a(href=`/${product.id}/unarchive`, class='btn btn-primary') Unarchive
+        else
+            p.product No any products available

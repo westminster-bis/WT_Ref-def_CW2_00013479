@@ -1,0 +1,18 @@
+extends layout
+
+block number1
+    if error
+        p.error Please fill all the inputs
+   
+
+    h2 Here you can create your products 
+
+    form.form(action='/add' method='POST')
+        label(for='name')  Product name
+
+        input.input(type='text' placeholder='Write the Product name here' name='name')
+        label(for='description')  Product description
+
+        textarea.input(name='description', rows="5", placeholder='Whrite your product description here')
+
+        button(class='btn btn-primary') Create

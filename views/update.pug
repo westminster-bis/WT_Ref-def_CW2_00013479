@@ -1,0 +1,12 @@
+extends layout.pug
+
+block number1
+    if products.length
+        each product in products
+            h2 Edit this product: #{product.id}
+            form.form(action='/update' method='POST')
+                label(for='name')  Product name
+                input.input(required type='text' placeholder=`${product.name}` name='name')
+                label(for='description') Product description
+                textarea.input(required name="description", cols="30", rows="10", placeholder=`${product.description}`)
+                button(class='btn btn-success btn-round-1') Change

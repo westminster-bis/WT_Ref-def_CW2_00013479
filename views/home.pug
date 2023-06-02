@@ -1,0 +1,23 @@
+extends layout.pug
+
+block number1
+    if success
+        p.success Your products have been recieved
+    if deleted
+        p.success You successfully deleted
+    if edited
+        p.success You EDITED succesfully
+    
+    h1 App to handle products in a wareehouse
+
+    div.product-list
+        if products.length
+            each product in products
+                p.product 
+                    a(href=`/${product.id}`) #{product.name}
+                    span
+                        a(href=`/${product.id}/archive`, class='btn btn-warning') Archive
+                        a(href=`/${product.id}/update`, class='done btn btn-success') Update
+                        a(href=`/${product.id}/delete`, class='btn btn-danger') Delete
+        else
+            p.product No any unarchived products available
