@@ -1,4 +1,4 @@
-# Notes Database web application
+# Warehouse Database web application
 
 ###
 
